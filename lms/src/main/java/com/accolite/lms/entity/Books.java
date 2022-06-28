@@ -1,0 +1,20 @@
+package com.accolite.lms.entity;
+
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Data
+@Entity
+@Table(name = "Books")
+public class Books {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer bookId;
+    String bookName;
+    String bookAuthor;
+    String bookGenre;
+    Integer noOfCopies;
+
+}

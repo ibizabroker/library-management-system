@@ -1,0 +1,27 @@
+<div class="container col-md-6 offset-mid-3">
+    <h3 class="text-center"> Add Book </h3>
+    <form (ngSubmit) = "onSubmit()" autocomplete="off">
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Book Name </label>
+            <input type="text" class="form-control" style="margin-bottom: 10px" id="bookName" [(ngModel)] = "book.bookName" name="bookName">
+        </div>
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Author </label>
+            <input type="text" class="form-control" style="margin-bottom: 10px" id="bookAuthor" [(ngModel)] = "book.bookAuthor" name="bookAuthor">
+        </div>
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Genre </label>
+            <input type="text" class="form-control" style="margin-bottom: 10px" id="bookGenre" [(ngModel)] = "book.bookGenre" name="bookGenre">
+        </div>
+
+        <div class="form-group">
+            <label style="margin-bottom: 10px"> Number of Copies </label>
+            <input type="text" class="form-control" style="margin-bottom: 10px" id="noOfCopies" [(ngModel)] = "book.noOfCopies" name="noOfCopies">
+        </div>
+
+        <button class="btn btn-success" type="submit"> Submit </button>
+    </form>
+</div>
