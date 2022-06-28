@@ -15,15 +15,15 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
-  {path: 'books', component: BooksListComponent},
-  {path: 'create-book', component: CreateBookComponent},
+  {path: 'books', component: BooksListComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
+  {path: 'create-book', component: CreateBookComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
   {path: '', component: HomeComponent},
-  {path: 'update-book/:bookId', component: UpdateBookComponent},
-  {path: 'book-details/:bookId', component: BookDetailsComponent},
-  {path: 'users', component: UsersListComponent},
-  {path: 'register-user', component: RegistrationComponent},
-  {path: 'user-details/:userId', component: UserDetailsComponent},
-  {path: 'update-user/:userId', component: UpdateUserComponent},
+  {path: 'update-book/:bookId', component: UpdateBookComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
+  {path: 'book-details/:bookId', component: BookDetailsComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
+  {path: 'users', component: UsersListComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
+  {path: 'register-user', component: RegistrationComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
+  {path: 'user-details/:userId', component: UserDetailsComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
+  {path: 'update-user/:userId', component: UpdateUserComponent, canActivate:[AuthGuard], data:{roles:['Admin']}},
   {path: 'login', component: LoginComponent},
   {path: 'forbidden', component: ForbiddenComponent}
 ];
