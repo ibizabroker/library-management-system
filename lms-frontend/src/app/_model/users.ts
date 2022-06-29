@@ -3,6 +3,5 @@ export class Users {
     username: string;
     name: string;
     password: string;
-    role: string;
-    active: boolean;
+    role: any;
 }

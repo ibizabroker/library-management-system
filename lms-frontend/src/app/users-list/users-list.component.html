@@ -5,7 +5,6 @@
             <th> Name </th>
             <th> Username </th>
             <th> Role </th>
-            <th> Active </th>
             <th> Actions </th>
         </tr>
     </thead>
@@ -13,8 +12,7 @@
         <tr *ngFor="let user of users">
             <td> {{ user.name }} </td>
             <td> {{ user.username }} </td>
-            <td> {{ user.role }} </td>
-            <td> {{ user.active }} </td>
+            <td> {{ user.role[0].roleName }} </td>
             <td>
                 <button (click) = "userDetails(user.userId)" class="btn btn-success"> View </button>
                 <button (click) = "updateUser(user.userId)" class="btn btn-info"  style="margin-left: 10px"> Edit </button>         

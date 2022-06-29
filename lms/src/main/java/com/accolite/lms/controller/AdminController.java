@@ -1,6 +1,5 @@
 package com.accolite.lms.controller;
 
-import com.accolite.lms.common.UserConstant;
 import com.accolite.lms.dao.UsersRepository;
 import com.accolite.lms.entity.JwtRequest;
 import com.accolite.lms.entity.JwtResponse;
