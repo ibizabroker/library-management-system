@@ -17,4 +17,12 @@ public class Books {
     String bookGenre;
     Integer noOfCopies;
 
+    public void borrowBook() {
+        this.noOfCopies--;
+    }
+
+    public void returnBook() {
+        this.noOfCopies++;
+    }
+
 }

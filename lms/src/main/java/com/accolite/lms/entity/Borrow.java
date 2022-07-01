@@ -1,20 +1,29 @@
 package com.accolite.lms.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@Entity
+@Entity @EntityListeners(AuditingEntityListener.class)
 @Table(name = "Borrow")
 public class Borrow {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer borrowId;
+    Integer bookId;
+    Integer userId;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonSerialize(using=JsonDataSerializer.class)
     Date issueDate;
-    Date dueDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonSerialize(using=JsonDataSerializer.class)
     Date returnDate;
 
 }
