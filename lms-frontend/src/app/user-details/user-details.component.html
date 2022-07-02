@@ -1,1 +1,22 @@
-<p>user-details works!</p>
+<h2>Borrow history of {{ user.name }}</h2>
+<table class="table table-info table-striped">
+    <thead>
+        <tr>
+            <th> Name of Book </th>
+            <th> Issue Date </th>
+            <th> Return Date </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let borrower of borrow">
+            <td> {{ borrower.bookId }} </td>
+            <td> {{ borrower.issueDate }} </td>
+            <div *ngIf="borrower.returnDate != null">
+                <td> {{ borrower.returnDate }} </td>
+            </div>
+            <div *ngIf="borrower.returnDate === null">
+                <td> Book not returned yet </td>
+            </div>
+        </tr>
+    </tbody>
+</table>

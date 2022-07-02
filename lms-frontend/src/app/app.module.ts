@@ -38,7 +38,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     LogoutComponent,
     HeaderComponent,
     HomeComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
