@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -40,7 +41,13 @@ public class BorrowController {
         booksRepository.save(book);
 
         Date currentDate = new Date();
+        Date overdueDate = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(overdueDate);
+        c.add(Calendar.DATE, 7);
+        overdueDate = c.getTime();
         borrow.setIssueDate(currentDate);
+        borrow.setDueDate(overdueDate);
         borrowRepository.save(borrow);
         return user.getName() + " has borrowed one copy of \"" + book.getBookName() + "\"!";
     }

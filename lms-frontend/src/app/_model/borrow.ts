@@ -4,4 +4,5 @@ export class Borrow {
     userId: number;
     issueDate: Date;
     returnDate: Date;
+    dueDate: Date;
 }

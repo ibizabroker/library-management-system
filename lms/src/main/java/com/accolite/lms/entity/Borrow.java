@@ -26,4 +26,8 @@ public class Borrow {
     @JsonSerialize(using=JsonDataSerializer.class)
     Date returnDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonSerialize(using=JsonDataSerializer.class)
+    Date dueDate;
+
 }

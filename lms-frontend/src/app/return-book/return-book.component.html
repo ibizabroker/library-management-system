@@ -5,6 +5,7 @@
             <th> Book ID </th>
             <th> Issue Date </th>
             <th> Return Date </th>
+            <th> Overdue Date </th>
             <th> Action </th>
         </tr>
     </thead>
@@ -13,6 +14,7 @@
             <td> {{ b.bookId }} </td>
             <td> {{ b.issueDate }} </td>
             <td> {{ b.returnDate }} </td>
+            <td> {{ b.dueDate }} </td>
             <td>
                 <div *ngIf="b.returnDate === null">
                     <button (click) = "returnBook(b.borrowId)" class="btn btn-success"> Return </button>
