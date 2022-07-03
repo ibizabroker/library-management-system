@@ -1,4 +1,4 @@
-<h2>Book List</h2>
+<h2>List of available books in the library</h2>
 <table class="table table-success table-striped">
     <thead>
         <tr>
@@ -18,9 +18,7 @@
             <td> {{ book.bookGenre }} </td>
             <td> {{ book.noOfCopies }} </td>
             <td>
-                <button (click) = "bookDetails(book.bookId)" class="btn btn-success"> View </button>
-                <button (click) = "updateBook(book.bookId)" class="btn btn-info"  style="margin-left: 10px"> Edit </button>
-                <button (click) = "deleteBook(book.bookId)" class="btn btn-danger" style="margin-left: 10px"> Delete </button>                
+                <button (click) = "borrowBook(book.bookId)" class="btn btn-success"> Borrow </button>
             </td>
         </tr>
     </tbody>

@@ -22,6 +22,8 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { BorrowBookComponent } from './borrow-book/borrow-book.component';
+import { ReturnBookComponent } from './return-book/return-book.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     HeaderComponent,
     HomeComponent,
     ForbiddenComponent,
+    BorrowBookComponent,
+    ReturnBookComponent,
   ],
   imports: [
     BrowserModule,

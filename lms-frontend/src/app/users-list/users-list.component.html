@@ -2,20 +2,27 @@
 <table class="table table-success table-striped">
     <thead>
         <tr>
+            <th> User ID </th>
             <th> Name </th>
             <th> Username </th>
             <th> Role </th>
-            <th> Actions </th>
+            <th> View History </th>
+            <th> Edit User </th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let user of users">
+            <td> {{ user.userId }} </td>
             <td> {{ user.name }} </td>
             <td> {{ user.username }} </td>
             <td> {{ user.role[0].roleName }} </td>
+            <td>        
+                <div *ngIf="user.role[0].roleName === 'User'">
+                    <button (click) = "userDetails(user.userId)" class="btn btn-success"> View </button>
+                </div>
+            </td>
             <td>
-                <button (click) = "userDetails(user.userId)" class="btn btn-success"> View </button>
-                <button (click) = "updateUser(user.userId)" class="btn btn-info"  style="margin-left: 10px"> Edit </button>         
+                <button (click) = "updateUser(user.userId)" class="btn btn-info"> Edit </button> 
             </td>
         </tr>
     </tbody>

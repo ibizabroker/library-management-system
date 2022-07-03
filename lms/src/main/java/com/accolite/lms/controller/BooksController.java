@@ -20,7 +20,6 @@ public class BooksController {
     @Autowired
     private BooksRepository booksRepository;
 
-    @PreAuthorize("hasRole('Admin')")
     @GetMapping("/books")
     public List<Books> getAllBooks(){
         return booksRepository.findAll();

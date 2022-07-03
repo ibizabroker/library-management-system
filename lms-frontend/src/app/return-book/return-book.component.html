@@ -1,0 +1,23 @@
+<h2>List of books to be returned</h2>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th> Book ID </th>
+            <th> Issue Date </th>
+            <th> Return Date </th>
+            <th> Action </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of borrow">
+            <td> {{ b.bookId }} </td>
+            <td> {{ b.issueDate }} </td>
+            <td> {{ b.returnDate }} </td>
+            <td>
+                <div *ngIf="b.returnDate === null">
+                    <button (click) = "returnBook(b.borrowId)" class="btn btn-success"> Return </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

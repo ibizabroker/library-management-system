@@ -23,6 +23,22 @@ export class UserAuthService {
     return localStorage.getItem('jwtToken')!;
   }
 
+  public setUserId(userId: number) {
+    localStorage.setItem('userId', JSON.stringify(userId));
+  }
+
+  public getUserId() {
+    return JSON.parse(localStorage.getItem('userId')!);
+  }
+
+  public setName(userId: number) {
+    localStorage.setItem('name', JSON.stringify(userId));
+  }
+
+  public getName() {
+    return JSON.parse(localStorage.getItem('name')!);
+  }
+
   public clear() {
     localStorage.clear();
   }

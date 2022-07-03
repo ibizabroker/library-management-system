@@ -13,13 +13,15 @@ export class HeaderComponent implements OnInit {
   constructor(
     private userAuthService: UserAuthService, 
     private router: Router,
-    public userService: UsersService
+    public userService: UsersService,
   ) { }
 
+  name = this.userAuthService.getName();
   ngOnInit(): void {
   }
 
   public isLoggedIn() {
+    console.log(this.name);
     return this.userAuthService.isLoggedIn();
   }
 
@@ -27,5 +29,4 @@ export class HeaderComponent implements OnInit {
     this.userAuthService.clear();
     this.router.navigate(['/']);
   }
-
 }

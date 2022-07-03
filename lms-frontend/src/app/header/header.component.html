@@ -24,33 +24,26 @@
             <a routerLink="/register-user" routerLinkActive="active" class="nav-link" *ngIf="userService.roleMatch(['Admin'])">Register User</a>
           </li>
 
+          <li class="nav-item">
+            <a routerLink="/borrow-book" routerLinkActive="active" class="nav-link" *ngIf="userService.roleMatch(['User'])">Borrow Books</a>
+          </li>
+
+          <li class="nav-item">
+            <a routerLink="/return-book" routerLinkActive="active" class="nav-link" *ngIf="userService.roleMatch(['User'])">Return Books</a>
+          </li>
+
+          <li class="nav-item right-text" *ngIf="isLoggedIn()">
+            <div class="nav-link disabled text-right">
+              <strong>
+                Hey {{name}}
+              </strong>
+            </div>
+          </li>
+
         </ul>
         <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
         <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
       </div>
     </div>
   </nav>
-    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div><a class="nav-link navbar-brand disabled" style="color: rgb(241, 223, 223);">Library Management System</a></div>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a routerLink="/books" routerLinkActive="active" class="nav-link">Book List</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/create-book" routerLinkActive="active" class="nav-link">Add Book</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/users" routerLinkActive="active" class="nav-link">User List</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/register-user" routerLinkActive="active" class="nav-link">Register User</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/login" class="nav-link" *ngIf="isLoggedIn()">Login</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/logout" class="nav-link" *ngIf="isLoggedIn()">Logout</a>
-          </li>
-        </ul>
-      </nav> -->
 </header>
